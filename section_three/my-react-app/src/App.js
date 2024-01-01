@@ -1,16 +1,17 @@
 import React from 'react';
 
+import Todo from './components/todo_component/Todo'
+
+export const DUMMY_TODOS = [
+    'Learn React',
+    'Practice React',
+    'Profit!'
+];
+
 export default function App() {
-    const [isSelected, setIsSelected] = React.useState();
-    
-    function handleClick() {
-        setIsSelected(!isSelected);
-    }
-    
-    return (
-        <div>
-            <p className={isSelected ? 'active' : ''}>Style me!</p>
-            <button onClick={handleClick}>Toggle style</button>
-        </div>
+    return(
+        <ul>
+            {DUMMY_TODOS.map(todoItem => <Todo text={todoItem} />)}
+        </ul>
     );
 }
