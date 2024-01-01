@@ -9,64 +9,76 @@ body {
   font-family: 'Raleway', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(#f6e1c4, #f3d09e);
-  color: #302b23;
+  background: linear-gradient(#cfb3f3, #c59afa);
+  color: #e5d9f1;
   min-height: 100vh;
 }
 
 #app {
   margin: 2rem auto;
-  padding: 1rem;
-  max-width: 40rem;
+  padding: 0.5rem 2rem;
+  max-width: 25rem;
   text-align: center;
   border-radius: 6px;
-  background: linear-gradient(#2a2722, #413c35);
-  color: #f4e9d7;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(#230736, #301247);
+  box-shadow: 0 0 8px rgba(0,0,0,0.3);
 }
 
 h1 {
-  letter-spacing: 0.15rem;
+  letter-spacing: 0.1rem;
+  font-size: 1.25rem;
   font-family: 'Lato', sans-serif;
   text-transform: uppercase;
-  margin-bottom: 0.5rem;
+  margin-bottom: 2.5rem;
+  color: #c7a0ee;
 }
 
-#app > p {
-  margin: 0;
-  color: #b3aa9c;
-}
-
-ul {
-  list-style: none;
-  margin: 2rem 0;
-  padding: 0;
-}
-
-li {
-  margin: 1rem auto;
-  padding: 0.5rem;
-  max-width: 20rem;
-  background: #fbd9a3;
-  color: #302b23;
-  border-radius: 4px;
-  text-align: left;
-}
-
-li h2,
-li p {
-  margin: 0;
-}
-
-li h2 {
-  font-family: 'Lato', sans-serif;
+label {
+  display: block;
+  margin-bottom: 0.25rem;
   font-size: 0.7rem;
   text-transform: uppercase;
-  color: #736957;
-  margin-bottom: 0.5rem;
+  letter-spacing: 0.1rem;
+  font-weight: 700;
+  text-align: left;
+  color: #9f80bf;
 }
 
-li p {
+input {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  border: 1px solid #493066;
+  background: #493664;
+  color: #e5d9f1;
   font-size: 0.9rem;
-  color: #474034;
+  font-family: 'Raleway', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+button {
+  padding: 0.5rem 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  border: 1px solid #5812b9;
+  background: #5812b9;
+  color: #e5d9f1;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #6c1fd6;
 }

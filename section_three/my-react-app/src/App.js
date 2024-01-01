@@ -1,25 +1,32 @@
-export function CourseGoal(props) {
-  return (
-    <li>
-      <h2>{props.title}</h2>
-      <p>{props.description}</p>
-    </li>
-  );
-}
+export const user = {
+  email: "",
+  password: "",
+  loggedIn: false,
+};
 
 function App() {
+  function handleClick() {
+    user.email = "example@email.com";
+    user.password = "3x@mple0";
+    user.loggedIn = true;
+  }
+
   return (
-    <div id="app" data-testid="app">
-      <h1>Time to Practice</h1>
-      <p>One course, many goals! 🎯</p>
-      <ul>
-        {/* OUTPUT AT LEAST TWO CourseGoal components here */}
-        {/* One of them should have a title of “Learn React” and a description of “In-depth” */}
-        <CourseGoal title="Learn React"
-        description="In-depth" />
-        <CourseGoal title="Practice"
-        description="Practice working with React components etc" />
-      </ul>
+    <div id="app">
+      <h1>User Login</h1>
+      <p>
+        <label>Email</label>
+        <input type="email" />
+      </p>
+
+      <p>
+        <label>Password</label>
+        <input type="password" />
+      </p>
+
+      <p id="actions">
+        <button onClick={handleClick}>Login</button>
+      </p>
     </div>
   );
 }
