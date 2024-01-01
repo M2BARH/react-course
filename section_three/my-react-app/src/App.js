@@ -1,26 +1,16 @@
 import React from 'react';
 
 export default function App() {
-    const [showAlert, setShowAlert] = React.useState();
+    const [isSelected, setIsSelected] = React.useState();
     
-    function handleDelete() {
-        setShowAlert(!showAlert);
-    }
-    
-    function handleProceed() {
-        setShowAlert(false);
+    function handleClick() {
+        setIsSelected(!isSelected);
     }
     
     return (
-      <div>
-        {!showAlert ? <button onClick={handleDelete}>Delete</button> : (
-            <div data-testid="alert" id="alert">
-              <h2>Are you sure?</h2>
-              <p>These changes can't be reverted!</p>
-              <button onClick={handleProceed}>Proceed</button>
-            </div>
-            )
-        }
-      </div>    
+        <div>
+            <p className={isSelected ? 'active' : ''}>Style me!</p>
+            <button onClick={handleClick}>Toggle style</button>
+        </div>
     );
 }
