@@ -1,16 +1,26 @@
 import React from 'react';
 
 export default function App() {
-    const [price, setDiscountPrice] = React.useState("$100");
+    const [showAlert, setShowAlert] = React.useState();
     
-    function applyDiscountPrice() {
-        setDiscountPrice("$75");
+    function handleDelete() {
+        setShowAlert(!showAlert);
+    }
+    
+    function handleProceed() {
+        setShowAlert(false);
     }
     
     return (
-        <div>
-            <p data-testid="price">{price}</p>
-            <button onClick={applyDiscountPrice}>Apply Discount</button>
-        </div>
+      <div>
+        {!showAlert ? <button onClick={handleDelete}>Delete</button> : (
+            <div data-testid="alert" id="alert">
+              <h2>Are you sure?</h2>
+              <p>These changes can't be reverted!</p>
+              <button onClick={handleProceed}>Proceed</button>
+            </div>
+            )
+        }
+      </div>    
     );
 }
