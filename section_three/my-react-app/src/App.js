@@ -1,28 +1,25 @@
-import React from 'react';
-
-export const userData = {
-  firstName: 'Maximilian',
-  lastName: 'Schwarzmüller', 
-  title: 'Instructor',
-};
-
-export function User() {
+export function CourseGoal(props) {
   return (
-    <div id="user" data-testid="user">
-      <h2>
-        {userData.firstName} {userData.lastName}
-      </h2>
-      <p>{userData.title}</p>
-    </div>
+    <li>
+      <h2>{props.title}</h2>
+      <p>{props.description}</p>
+    </li>
   );
 }
 
 function App() {
   return (
-    <div id="app">
+    <div id="app" data-testid="app">
       <h1>Time to Practice</h1>
-      <p>Welcome on board of this course! You got this 💪</p>
-      <User />
+      <p>One course, many goals! 🎯</p>
+      <ul>
+        {/* OUTPUT AT LEAST TWO CourseGoal components here */}
+        {/* One of them should have a title of “Learn React” and a description of “In-depth” */}
+        <CourseGoal title="Learn React"
+        description="In-depth" />
+        <CourseGoal title="Practice"
+        description="Practice working with React components etc" />
+      </ul>
     </div>
   );
 }
