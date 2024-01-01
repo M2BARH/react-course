@@ -1,31 +1,22 @@
 export const user = {
-  email: "",
-  password: "",
-  loggedIn: false,
+  name: '',
 };
 
 function App() {
-  function handleClick() {
-    user.email = "example@email.com";
-    user.password = "3x@mple0";
-    user.loggedIn = true;
+  function handleCreateUser(name) {
+    user.name = name;
   }
 
   return (
     <div id="app">
       <h1>User Login</h1>
       <p>
-        <label>Email</label>
-        <input type="email" />
-      </p>
-
-      <p>
-        <label>Password</label>
-        <input type="password" />
+        <label>Name</label>
+        <input type="text" />
       </p>
 
       <p id="actions">
-        <button onClick={handleClick}>Login</button>
+        <button onClick={() => handleCreateUser("2lani")}>Create User</button>
       </p>
     </div>
   );
