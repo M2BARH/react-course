@@ -1,16 +1,10 @@
-function Summary({ text }) {
-  return (
-    <>
-        <h1>Summary</h1>
-        <p>{ text }</p>
-    </>
-    );
-}
+import Input from "./components/input_component/input";
 
 function App() {
   return (
-    <div id="app" data-testid="app">
-      <Summary text="Fragments help you avoid unnecessary HTML elements." />
+    <div id="app">
+      <Input type="text" placeholder="Your name" />
+      <Input richText placeholder="Your message" />
     </div>
   );
 }
