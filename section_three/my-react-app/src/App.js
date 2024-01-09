@@ -1,54 +1,41 @@
-import Button from "./components/flexible_components/Button";
-import HomeIcon from "./components/flexible_components/HomeIcon";
-import PlusIcon from "./components/flexible_components/PlusIcon";
+import React from "react";
+import Review from "./components/review_component/Review";
 
 function App() {
+  const [feedBack, setFeedBack] = React.useState();
+  const [name, setName] = React.useState();
+
+  function handleFeedBackChange(event) {
+    setFeedBack(event.target.value);
+  }
+
+  function handleNameChange(event) {
+    setName(event.target.value);
+  }
+
   return (
-    <div id="app">
-      <section>
-        <h2>Filled Button (Default)</h2>
+    <>
+      <section id="feedback">
+        <h2>Please share some feedback</h2>
         <p>
-          <Button>Default</Button>
+          <label>Your Feedback</label>
+          <textarea value={feedBack} onChange={handleFeedBackChange} />
         </p>
         <p>
-          <Button mode="filled">Filled (Default)</Button>
-        </p>
-      </section>
-      <section>
-        <h2>Button with Outline</h2>
-        <p>
-          <Button mode="outline">Outline</Button>
+          <label>Your Name</label>
+          <input type="text" value={name} onChange={handleNameChange} />
         </p>
       </section>
-      <section>
-        <h2>Text-only Button</h2>
+      <section id="draft">
+        <h2>Your feedback</h2>
+
+        <Review feedback={feedBack} student={name} />
+
         <p>
-          <Button mode="text">Text</Button>
+          <button>Save</button>
         </p>
       </section>
-      <section>
-        <h2>Button with Icon</h2>
-        <p>
-          <Button Icon={HomeIcon}>Home</Button>
-        </p>
-        <p>
-          <Button Icon={PlusIcon} mode="text">
-            Add
-          </Button>
-        </p>
-      </section>
-      <section>
-        <h2>Buttons Should Support Any Props</h2>
-        <p>
-          <Button mode="filled" disabled>
-            Disabled
-          </Button>
-        </p>
-        <p>
-          <Button onClick={() => console.log("Clicked!")}>Click me</Button>
-        </p>
-      </section>
-    </div>
+    </>
   );
 }
 
