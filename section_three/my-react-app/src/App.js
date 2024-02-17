@@ -1,18 +1,18 @@
 import React from "react";
 
+import "./index.css";
+
 function App() {
-    
-  const [color, setColor] = React.useState('white');
-  
-  const handleClick = () => {
-      setColor(color === 'white' ? 'red' : 'white');
-  }
-  
+  const clickHandler = () => {
+    console.log("Clicked!");
+  };
+
   return (
-      <div>
-          <p style={{color: color }}>Style me!</p>
-          <button onClick={handleClick}>Toggle style</button>
-      </div>
+    <div>
+      <h2>You're logged in!</h2>
+      <p>Welcome to your user profile!</p>
+      <button onClick={clickHandler}>Click me!</button>
+    </div>
   );
 }
 
