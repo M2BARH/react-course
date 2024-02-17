@@ -1,25 +1,18 @@
-import React from 'react';
+import React from "react";
 
 function App() {
     
-    const [className, setClassName] = React.useState('');
-    
-    const handleClick = (newClassName) => {
-        setClassName(newClassName);
-    };
-    
-    return (
-    <div id="app">
-      <h1 className={`${className}`}>CSS is great!</h1>
-      <menu>
-        <li>
-          <button onClick={() => handleClick('highlight-green')}>Yes</button>
-        </li>
-        <li>
-          <button onClick={() => handleClick('highlight-red')}>No</button>
-        </li>
-      </menu>
-    </div>
+  const [color, setColor] = React.useState('white');
+  
+  const handleClick = () => {
+      setColor(color === 'white' ? 'red' : 'white');
+  }
+  
+  return (
+      <div>
+          <p style={{color: color }}>Style me!</p>
+          <button onClick={handleClick}>Toggle style</button>
+      </div>
   );
 }
 
