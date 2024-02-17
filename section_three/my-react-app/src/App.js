@@ -1,17 +1,20 @@
 import React from "react";
 
-import "./index.css";
-
 function App() {
-  const clickHandler = () => {
-    console.log("Clicked!");
-  };
+
+  const fileInputRef = React.useRef();
+
+  const handleClick = () => {
+    fileInputRef.current.click();
+  }
 
   return (
-    <div>
-      <h2>You're logged in!</h2>
-      <p>Welcome to your user profile!</p>
-      <button onClick={clickHandler}>Click me!</button>
+    <div id="app">
+      <p>Please select an image</p>
+      <p>
+        <input ref={fileInputRef} data-testid="file-picker" type="file" accept="image/*" />
+        <button onClick={handleClick}>Pick Image</button>
+      </p>
     </div>
   );
 }
